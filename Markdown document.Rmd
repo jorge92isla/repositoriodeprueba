@@ -1,0 +1,28 @@
+# This is my first RMarkdown document, in which I´m trying to generate a R code, plots, and my personal comments.
+
+```{r}
+library(readxl)
+library(lme4)
+datosfamilias <- read_excel("datosfamilias.xlsx")
+head(datosfamilias)
+
+```
+
+# I have been installed "readxl" package to open my data, and "lme4" to do the regresión.
+
+```{r}
+regresion<-lm(peso ~ altura, data = datosfamilias)
+
+summary(regresion)
+```
+
+# Obviously I find a relationship, then I intend to plot the regression and the trend line.
+
+
+```{r}
+plotregresion<-plot(peso ~ altura, data = datosfamilias)
+
+abline(regresion, col = "green")
+```
+
+abline(regresion, col = "green")
